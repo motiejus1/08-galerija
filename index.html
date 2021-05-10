@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-6'>tekstas</div>
+            <div class='col-md-6'>tekstas</div>
+            <div class='col-md-6'>tekstas</div>
+            <div class='col-md-6'>tekstas</div>
+            <div class='col-md-6'>tekstas</div>
+            <div class='col-md-6'>tekstas</div>
+        </div>
+    
+    </div>
+    <script>
+
+        var x = 1;
+
+        var masyvas;
+        var informacija = '';
+
+        masyvas = {
+            "image1": "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "image2": "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "image3": "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "image4": "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "urls": [
+             "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+            "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080"         
+        ],
+        
+        };
+
+        // var url;
+
+        // url = masyvas.urls[3];
+
+        // console.log(url);
+
+
+        // for(var i = 0; i < masyvas.urls.length; i++ ) {
+
+        //     //  console.log(masyvas.urls[i]);
+
+        //      var imageElement = document.createElement('img');
+        //      imageElement.src = masyvas.urls[i];
+        //      document.querySelector('.container').append(imageElement);
+
+        // }
+
+        // informacija = masyvas.image2;
+
+        // var imageElement = document.createElement('img');
+        // imageElement.src = masyvas.image1;
+        // document.querySelector('.container').append(imageElement);
+
+        // var imageElement1 = document.createElement('img');
+        // imageElement1.src = masyvas.image2;
+        // document.querySelector('.container').append(imageElement1);
+
+        // var imageElement2 = document.createElement('img');
+        // imageElement2.src = masyvas.image3;
+        // document.querySelector('.container').append(imageElement2);
+
+        // var imageElement3 = document.createElement('img');
+        // imageElement3.src = masyvas.image4;
+        // document.querySelector('.container').append(imageElement3);
+        
+
+        // console.log(informacija);
+
+        // console.log(masyvas);
+
+
+
+        fetch("https://api.unsplash.com/photos/?client_id=BL6GxFw6TnTjKO9HAs5vlTSJDcttPRei0pK1H2eUM4c&page=2")
+        .then(res => res.json())
+        .then(data => {
+            //  console.log(data);
+
+                for(var i = 0; i < data.length; i++ ) {
+                    console.log(data[i].urls.regular);
+                    var imageElement = document.createElement('img');
+                    imageElement.src = data[i].urls.regular;
+                    document.querySelector('.container').append(imageElement);
+                }
+            }
+        );
+    </script>
+</body>
+</html>
