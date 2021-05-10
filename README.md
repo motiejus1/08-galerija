@@ -2,13 +2,13 @@
 
 Sukurti prie ekrano prisitaikančią (ang. responsive) paveikslėlių galeriją.
 
-1.Paveikslėlių galerija suskirstyta į du stulpelius, naudojant Bootstrap biblioteką arba Grid struktūrą.
-2.Paveikslėlių rikiavimas pagal pavadinimą.
-3.Paveikslėlių kiekis nuo 20.
-4.Sukurti „infinite scroll“ galimybę.
+1. Paveikslėlių galerija suskirstyta į du stulpelius, naudojant Bootstrap biblioteką arba Grid struktūrą.
+2. Paveikslėlių rikiavimas pagal pavadinimą.
+3. Paveikslėlių kiekis nuo 20.
+4. Sukurti „infinite scroll“ galimybę.
 
 Papildomi taškai:
-1.Nuotraukos įkeliamos pasitelkiant išorinį API.
+1. Nuotraukos įkeliamos pasitelkiant išorinį API.
 
 1. Unsplash API integracija
 
