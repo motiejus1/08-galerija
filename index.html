@@ -31,6 +31,11 @@
 </head>
 <body>
     <div class='container'>
+        <div class='sort-by-button-group button-group'>
+            <button class='btn btn-outline-primary' data-sort-value='title' data-sort-direction='asc'>A-Z</button>
+            <button class='btn btn-primary' data-sort-value='title' data-sort-direction='desc'>Z-A</button>
+            <button class='btn btn-primary' data-sort-value='random' data-sort-direction='desc'>Random</button>
+        </div>
         <div class='row grid'>
             <div class='col-md-6 grid-sizer'></div>
             <div class='grid-gutter-sizer'></div>
@@ -38,6 +43,28 @@
     
     </div>
     <script>
+
+        //Salygos sakinys
+
+        // var skaicius = 9;
+        // var tekstas = 'tekstas';
+        
+        // >
+        // <
+        // >=
+        // <=
+        // ==
+        // !=
+        // if(tekstas == '') {
+        //     console.log('Tkestas tuscias');
+        // } else {
+        //     console.log(tekstas);
+        // }
+
+        // if(skaicius > 8) {
+        //     console.log('Skaicius yra didesnis nei 8');
+        // }
+
         // const konstanta='3.141';
 
         // let kintamasis;
@@ -142,13 +169,19 @@
         .then(res => res.json())
         .then(data => {
                 for(var i = 0; i < data.length; i++ ) {
-                    console.log(data[i].urls.regular);
+                    //console.log(data[i].urls.regular);
                     
                     //pavadinimo atvaizdavimas
 
                     var pElement = document.createElement('p');
                     pElement.classList.add('title');
-                     pElement.innerText = data[i].alt_description;
+
+                    if(!data[i].alt_description) {
+                        pElement.innerText = 'Aprasymas yra tuscias';
+                    } else {
+                        pElement.innerText = data[i].alt_description;
+                    }
+
                     
                     //susikuriama paveiksliuka
                     
@@ -183,6 +216,31 @@
                     sortBy: 'title',
                     sortAscending: true
                 });
+
+
+                var sortByGroup = document.querySelector('.sort-by-button-group');
+                sortByGroup.addEventListener('click', function( event ){
+                    
+                    if(!matchesSelector(event.target,'.btn')) {
+                        return;
+                    }
+                    
+                    var sortValue = event.target.getAttribute('data-sort-value');
+                    var sortDirection = event.target.getAttribute('data-sort-direction');
+                    var isAscending = (sortDirection == 'asc') ;// true, false
+
+                    iso.arrange({
+                        sortBy: sortValue,
+                        sortAscending: isAscending
+                    });
+
+                   // if(typeof tekstas == 'undefined')
+
+                    console.log(sortValue);
+                    console.log(sortDirection);
+                    console.log(isAscending);
+                });
+
             }
         );
     </script>
