@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerija</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
@@ -56,11 +56,14 @@
     </div>
     <script>
 
-
         var iso;
-        var pages = 1;
+        var page = 1;
 
-        loadImages(pages);//1
+        loadImages(1);//1
+        loadImages(2);
+        loadImages(3);
+        loadImages(4);
+        loadImages(5);
 
         function loadImages(page) {        
         fetch("https://api.unsplash.com/photos/?client_id=BL6GxFw6TnTjKO9HAs5vlTSJDcttPRei0pK1H2eUM4c&page=" + page)
@@ -121,14 +124,13 @@
         }
         
         window.addEventListener('scroll', function(){
+           // console.log(window.scrollY);
+            // console.log(document.body.offsetHeight);
+            //console.log(window.innerHeight);
+            //console.log(window.scrollY + window.innerHeight);
             var pozicija = window.scrollY + window.innerHeight;
             if(pozicija >= document.body.offsetHeight) {
-                if(pages < 9) {
-                    console.log('Puslapio pabaiga');
-                    pages++;
-                    console.log(pages);
-                    loadImages(pages);
-                }
+                console.log('Puslapio pabaiga');
             }
 
         });
